@@ -3,6 +3,9 @@
 .AppleDouble
 .LSOverride
 
+### SQLite3 ###
+*.sqlite3
+
 ### SublimeText ###
 # cache files for sublime text
 *.tmlanguage.cache
