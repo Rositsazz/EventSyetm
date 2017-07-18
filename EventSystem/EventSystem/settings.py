@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Location of root django.contrib.admin URL, use {% url 'admin:index' %}
+ADMIN_URL = r'^admin/'
 
 # Application definition
 
@@ -37,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
