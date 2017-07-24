@@ -1,27 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/css/main.css" />
-    <title>Index page</title>
+{% extends 'base.html' %}
 
-</head>
-
-<body>
-<div class="preview clearfix light">
-    <div class="container">
-        <div class="content">
-            <div id="cssmenu">
-              <ul>
-                 <li class="active"><a href="#" target="_blank"><span><i class="fa fa-fw fa-home"></i> Home</span></a></li>
-                 <li><a href="#"><span><i class="fa fa-fw fa-bars"></i> Menus</span></a></li>
-                 <li><a href="#"><span><i class="fa fa-fw fa-cog"></i> Settings</span></a></li>
-                 <li><a href="#"><span><i class="fa fa-fw fa-phone"></i> Contact</span></a></li>
-              </ul>
-        </div>
-        </div>
-    </div>
+{% block 'page-content' %}
+<div>
+    Main information.
 </div>
-</body>
-</html>
-
+{% endblock %}
