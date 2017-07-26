@@ -37,3 +37,10 @@ class BaseUser(AbstractBaseUser):
     @property
     def full_name(self):
         return "{} {}".format(self.first_name, self.last_name)
+
+
+class Organiser(BaseUser):
+    signature = models.ImageField(upload_to="teachers_signatures", null=True, blank=True)
+
+    def __str__(self):
+        return "{0) - {1}".format(self.full_name, self.email)
