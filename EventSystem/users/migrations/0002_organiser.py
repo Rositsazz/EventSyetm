@@ -16,8 +16,17 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Organiser',
             fields=[
-                ('baseuser_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='users.BaseUser')),
-                ('signature', models.ImageField(blank=True, null=True, upload_to='teachers_signatures')),
+                ('baseuser_ptr', models.OneToOneField(
+                    auto_created=True,
+                    on_delete=django.db.models.deletion.CASCADE,
+                    parent_link=True,
+                    primary_key=True,
+                    serialize=False,
+                    to='users.BaseUser')),
+                ('signature', models.ImageField(
+                    blank=True,
+                    null=True,
+                    upload_to='teachers_signatures')),
             ],
             options={
                 'abstract': False,

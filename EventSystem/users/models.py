@@ -40,7 +40,8 @@ class BaseUser(AbstractBaseUser):
 
 
 class Organiser(BaseUser):
-    signature = models.ImageField(upload_to="teachers_signatures", null=True, blank=True)
+    signature = models.ImageField(upload_to="teachers_signatures", null=True,
+                                  blank=True)
 
     def __str__(self):
         return "{0) - {1}".format(self.full_name, self.email)

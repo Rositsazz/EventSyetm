@@ -17,33 +17,47 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='City',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True,
+                                        serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=128)),
             ],
         ),
         migrations.CreateModel(
             name='Event',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True,
+                                        serialize=False, verbose_name='ID')),
                 ('start_date', models.DateField()),
                 ('end_date', models.DateField()),
                 ('capacity', models.PositiveIntegerField()),
-                ('event_type', models.SmallIntegerField(choices=[(1, 'Wedding'), (2, 'Ball'), (3, 'Conference')])),
-                ('city', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='events.City')),
+                ('event_type', models.SmallIntegerField(
+                    choices=[(1, 'Wedding'),
+                             (2, 'Ball'),
+                             (3, 'Conference')])),
+                ('city', models.OneToOneField(
+                    on_delete=django.db.models.deletion.CASCADE,
+                    to='events.City')),
             ],
         ),
         migrations.CreateModel(
             name='Place',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True,
+                                        serialize=False,
+                                        verbose_name='ID')),
                 ('name', models.CharField(max_length=128)),
                 ('capacity', models.PositiveIntegerField()),
-                ('city', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='events.City')),
+                ('city', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE,
+                    to='events.City')),
             ],
         ),
         migrations.AddField(
             model_name='event',
             name='place',
-            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='events.Place'),
+            field=models.OneToOneField(
+                on_delete=django.db.models.deletion.CASCADE,
+                to='events.Place'),
         ),
     ]

@@ -36,5 +36,7 @@ class Event(models.Model):
     event_type = models.SmallIntegerField(choices=EVENT_TYPE_CHOICES)
 
     def __str__(self):
-        return "{event_type} in {place}, {start_date}".format(event_type=self.event_type, place=self.place,
-                                                              start_date=self.start_date)
+        return "{event_type} in {place}, {start_date}".format(
+            event_type=self.event_type,
+            place=self.place,
+            start_date=self.start_date)

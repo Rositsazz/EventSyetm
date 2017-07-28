@@ -21,11 +21,12 @@ class VirtualEnvBuilder(object):
         return "VirtEnvs/" + dirname(__file__).split("/")[-1]
 
     def build(self):
-        print("Building virtual env from Python version {}".format(sys.version))
+        print("Building virtual env from Python version {}".format(
+            sys.version))
 
         # Create a fresh virtual env
         self.create_venv(self.venv_path)
-        file_name = join(dirname(__file__)) +  "\\requirements.txt"
+        file_name = join(dirname(__file__)) + "\\requirements.txt"
         import os.path
         if os.path.exists(file_name):
             print("Requirements file exists!")
@@ -42,7 +43,6 @@ class VirtualEnvBuilder(object):
         from virtualenv import create_environment
         create_environment(venv_path)
 
-
     def run_in_venv(self, cmd, args):
         virtual_env_bin_path = self.venv_name
         if platform.system() == 'Windows':
@@ -54,7 +54,8 @@ class VirtualEnvBuilder(object):
         import os.path
         if not os.path.exists(join(root_path, virtual_env_bin_path, cmd)):
             return "Pip3 not found!"
-        subprocess.check_call([join(root_path, virtual_env_bin_path, cmd)] + args)
+        subprocess.check_call(
+            [join(root_path, virtual_env_bin_path, cmd)] + args)
 
 
 if __name__ == '__main__':
