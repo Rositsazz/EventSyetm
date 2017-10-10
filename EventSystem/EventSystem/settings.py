@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'bootstrap3',
+
     'users.apps.UsersConfig',
     'events.apps.EventsConfig',
     'website.apps.WebsiteConfig',

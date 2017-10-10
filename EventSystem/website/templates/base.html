@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/static/css/main.css" />
+    <link rel="stylesheet" href="/static/css/font-awesome-4.7.0/css/font-awesome.min.css">
+
     <title>Index page</title>
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
     {% block 'head-content' %}
 
     {% endblock %}
 </head>
 
 <body>
-<div class="preview clearfix light">
     <div class="container">
         <div class="content">
             <div id="cssmenu">
               <ul>
-                 <li class="active"><a href="#" target="_blank"><span><i class="fa fa-fw fa-home"></i> Home</span></a></li>
-                 <li><a href="#"><span><i class="fa fa-fw fa-bars"></i> Menus</span></a></li>
+                 <li class="active"><a href="#" target="_blank"><span><i class="fa fa-home" aria-hidden="true"></i>Home</span></a></li>
+                 <li><a href="#"><span><i class="fa fa-fw fa-bars"></i> Menu</span></a></li>
                  <li><a href="#"><span><i class="fa fa-fw fa-cog"></i> Settings</span></a></li>
-                 <li><a href="#"><span><i class="fa fa-fw fa-phone"></i> Contact</span></a></li>
+                 <li><a href="#"><span><i class="fa fa-fw fa-phone"></i> Contacts</span></a></li>
               </ul>
             </div>
+            {% block 'page-content' %}
+
+            {% endblock %}
 
         </div>
     </div>
-</div>
-{% block 'page-content' %}
 
-{% endblock %}
 </body>
 </html>
-
